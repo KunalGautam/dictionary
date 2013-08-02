@@ -1,4 +1,4 @@
-dictionary
+Dictionary
 ==========
 
-Dictionary app
+A small ajax based Dictionary app
