@@ -4,16 +4,16 @@ $value = $_GET['q'];
 echo "<form action=\"\">";
 echo "<select name=\"Word\" onChange=\"meaning(this.value)\">";
 echo "<option>Select the word !</option>";
-
-$con = mysql_connect("localhost","root","redhat");
+include ('config.php');
+$con = mysql_connect($server,$user,$password);
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("dict", $con);
+mysql_select_db($db, $con);
 
-$result = mysql_query("select * from dict where (word LIKE '$value%')");
+$result = mysql_query("select * from dictionary where (word LIKE '$value%')");
 
 while($row = mysql_fetch_array($result))
   {
